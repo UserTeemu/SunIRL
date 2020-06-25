@@ -1,6 +1,7 @@
 package io.github.tivj.sunirl.mixin.daylength;
 
 import com.mojang.authlib.GameProfile;
+import io.github.tivj.sunirl.CalculationHelper;
 import io.github.tivj.sunirl.DayLengthPacketHandler;
 import io.github.tivj.sunirl.SunIRL;
 import io.netty.buffer.Unpooled;
@@ -27,7 +28,7 @@ public class PlayerManagerMixin {
     private void sendDayLengthPacket(ClientConnection connection, ServerPlayerEntity player, CallbackInfo ci, GameProfile gameProfile, UserCache userCache, String string, CompoundTag compoundTag, RegistryKey<?> registryKey, ServerWorld serverWorld, ServerWorld serverWorld3, String string2, WorldProperties worldProperties, ServerPlayNetworkHandler packetHandler) {
         if (SunIRL.instance.config.irlDayLength) {
             PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
-            passedData.writeLong(SunIRL.ticksIn24h);
+            passedData.writeLong(CalculationHelper.ticksIn24h);
 
             ServerSidePacketRegistry.INSTANCE.sendToPlayer(player, DayLengthPacketHandler.DAYLENGTH_PACKET_ID, passedData);
         }

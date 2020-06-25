@@ -11,6 +11,8 @@ import java.util.TimeZone;
 public class SunConfig implements ConfigData {
     public boolean useMCTime = true; // if time (not date) should be the same as in Minecraft
     public boolean irlDayLength = false; // if 1 in-game day = 24000 ticks
+    @ConfigEntry.Gui.Tooltip()
+    public boolean addDays = false;
     public boolean sunDirectionalFog = true;
 
     public int updateDelay = 100;

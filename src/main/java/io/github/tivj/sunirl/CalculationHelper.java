@@ -10,10 +10,11 @@ import java.time.ZonedDateTime;
 import java.util.TimeZone;
 
 public class CalculationHelper {
+    public static final long ticksIn24h = 1728000L;
     public static final float sunDiameterKM = 1392700F;
     public static final float moonDiameterKM = 3474.2F;
-    public int ticksUntilNextCalculation = 0;
 
+    public int ticksUntilNextCalculation = 0;
     private MoonPosition.Parameters moonPosCalculator;
     private SunPosition.Parameters sunPosCalculator;
 
@@ -63,9 +64,9 @@ public class CalculationHelper {
         TimeZone timezone = TimeZone.getTimeZone(SunIRL.instance.config.location.timezone);
         ZonedDateTime time = ZonedDateTime.of(
                 LocalDateTime.of(
-                        LocalDate.now(timezone.toZoneId()),
+                        LocalDate.now(timezone.toZoneId()).plusDays(SunIRL.instance.config.addDays ? minecraftTime / SunIRL.instance.dayLength : 0),
                         SunIRL.instance.config.useMCTime ?
-                                LocalTime.ofSecondOfDay(((minecraftTime % SunIRL.instance.dayLength) / 20L) * (SunIRL.instance.config.irlDayLength ? 1 : 72)) :
+                                LocalTime.ofSecondOfDay((long) (minecraftTime % SunIRL.instance.dayLength / (double)SunIRL.instance.dayLength * 24D * 60D * 60D)) :
                                 LocalTime.now(timezone.toZoneId()).plusHours(timezone.useDaylightTime() ? 1 : 0)
                 ),
                 timezone.toZoneId()

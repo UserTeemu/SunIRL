@@ -9,7 +9,6 @@ import net.minecraft.client.MinecraftClient;
 
 public class SunIRL implements ModInitializer, ClientModInitializer {
 	public static SunIRL instance;
-	public static final long ticksIn24h = 1728000L;
 	public long dayLength = 24000L;
 
 	public CalculationHelper positionCalculator;

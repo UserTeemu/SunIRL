@@ -1,5 +1,6 @@
 package io.github.tivj.sunirl.mixin.daylength;
 
+import io.github.tivj.sunirl.CalculationHelper;
 import io.github.tivj.sunirl.SunIRL;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
@@ -28,6 +29,6 @@ public class LongConstantModifierMixin {
             /*DemoServerPlayerInteractionManager*/"update"
     }, constant = @Constant(longValue = 24000L))
     private static long getDayLength(long og) {
-        return SunIRL.instance.config.irlDayLength ? SunIRL.ticksIn24h : og;
+        return SunIRL.instance.config.irlDayLength ? CalculationHelper.ticksIn24h : og;
     }
 }

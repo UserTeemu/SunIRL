@@ -1,5 +1,6 @@
 package io.github.tivj.sunirl.mixin;
 
+import io.github.tivj.sunirl.CalculationHelper;
 import io.github.tivj.sunirl.SunIRL;
 import net.minecraft.client.gui.hud.DebugHud;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public class DebugHUDMixin {
     @ModifyConstant(method = "getLeftText", constant = @Constant(longValue = 24000L))
     private static long getDayLength(long og) {
-        return SunIRL.instance.config.irlDayLength ? SunIRL.ticksIn24h : og;
+        return SunIRL.instance.config.irlDayLength ? CalculationHelper.ticksIn24h : og;
     }
 }

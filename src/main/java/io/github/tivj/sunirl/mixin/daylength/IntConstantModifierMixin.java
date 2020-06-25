@@ -1,5 +1,6 @@
 package io.github.tivj.sunirl.mixin.daylength;
 
+import io.github.tivj.sunirl.CalculationHelper;
 import io.github.tivj.sunirl.SunIRL;
 import net.minecraft.command.arguments.TimeArgumentType;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public class IntConstantModifierMixin {
     @ModifyConstant(method = "<clinit>", constant = @Constant(intValue = 24000))
     private static int getDayLength(int og) {
-        return SunIRL.instance.config.irlDayLength ? (int) SunIRL.ticksIn24h : og;
+        return SunIRL.instance.config.irlDayLength ? (int) CalculationHelper.ticksIn24h : og;
     }
 }
