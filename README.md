@@ -5,6 +5,11 @@
  
  Calculations made based on [commons-suncalc](https://github.com/shred/commons-suncalc).
  
+ ## HELP! The sun doesn't go below the horizon, even though it's supposed to
+It's because what you call the "horizon" isn't the same as 0 pitch.
+What the player would call the horizon, depends their render distance.
+If someone has a very pog idea how to make this look more pleasing, please PR it.
+ 
  ## Customization
  ### With ModMenu
  When in a world: Esc -> Mods -> SunIRL -> gear icon in top right
