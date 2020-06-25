@@ -27,8 +27,8 @@ public class SunConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip()
         public String timezone = TimeZone.getDefault().getID();
         @ConfigEntry.Gui.Tooltip()
-        public double latitude = 61.143235D;
+        public double latitude = 0D;
         @ConfigEntry.Gui.Tooltip()
-        public double longitude = 4D;
+        public double longitude = 0D;
     }
 }
