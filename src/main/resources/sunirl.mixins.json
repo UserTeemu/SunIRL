@@ -11,12 +11,12 @@
     "daylength.TimeCommandMixin"
   ],
   "client": [
+    "BackgroundRendererMixin",
     "DebugHUDMixin",
     "DimensionTypeMixin",
-    "WorldRendererMixin",
-    "BackgroundRendererMixin",
+    "MinecraftClientMixin",
     "SkyPropertiesMixin",
-    "MinecraftClientMixin"
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

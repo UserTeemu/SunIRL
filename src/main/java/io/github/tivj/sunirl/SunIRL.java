@@ -24,17 +24,6 @@ public class SunIRL implements ModInitializer, ClientModInitializer {
 		this.config = AutoConfig.getConfigHolder(SunConfig.class).getConfig();
 		this.oldConfig = new SunConfigOld(this.config);
 		this.positionCalculator = new CalculationHelper();
-
-		/* Debug Purposes
-		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-			dispatcher.register(CommandManager.literal("sundebug").then(CommandManager.argument("arg", FloatArgumentType.floatArg()).executes(context -> {
-				commandValue = FloatArgumentType.getFloat(context, "arg");
-				return 1;
-			})).executes(context -> {
-				commandValue++;
-				return 1;
-			}));
-		});*/
 	}
 
 	public void initClient() {

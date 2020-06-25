@@ -25,7 +25,7 @@ public class SunConfigOld {
 
     public void onSettingsGuiClosed(MinecraftClient mc) {
         if (this.config.irlDayLength != this.irlDayLength && mc.isInSingleplayer()) {
-            SunIRL.instance.dayLength = irlDayLength ? 1728000L : 24000L;
+            SunIRL.instance.dayLength = this.config.irlDayLength ? 1728000L : 24000L;
         }
         if (this.config.location.latitude != this.latitude || this.config.location.longitude != this.longitude) {
             SunIRL.instance.positionCalculator.setPosition(this.config.location.latitude, this.config.location.longitude);

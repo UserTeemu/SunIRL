@@ -5,11 +5,11 @@
   "text.autoconfig.sunirl.option.sunAndMoonSizeMultiplier.@Tooltip[0]": "Multiply sun and moon sizes",
   "text.autoconfig.sunirl.option.sunAndMoonSizeMultiplier.@Tooltip[1]": "1=IRL scale (looks still bigger IRL due to the light), 6.6 for normal-ish MC",
 
+  "text.autoconfig.sunirl.option.sunDirectionalFog": "Facing direction based fog",
   "text.autoconfig.sunirl.option.sunAndMoonSizeMultiplier": "Sun and moon size",
   "text.autoconfig.sunirl.option.useMCTime": "Use Minecraft time in calculations",
   "text.autoconfig.sunirl.option.irlDayLength": "Use IRL day length in world",
   "text.autoconfig.sunirl.option.updateDelay": "Ticks between calculations",
-
 
   "text.autoconfig.sunirl.option.location.timezone.@Tooltip": "Timezone indicated as \"UTC+HH:MM\" or regionally",
   "text.autoconfig.sunirl.option.location.longitude.@Tooltip": "(you can use https://www.latlong.net)",
