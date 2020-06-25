@@ -5,11 +5,11 @@
  
  Calculations made based on [commons-suncalc](https://github.com/shred/commons-suncalc).
  
- ##Customization
- ###With ModMenu
+ ## Customization
+ ### With ModMenu
  When in a world: Esc -> Mods -> SunIRL -> gear icon in top right
- ###Without ModMenu
+ ### Without ModMenu
  Sadly you'll need to change the settings from `my_game_folder/config/sunirl.json`
  
- ##License
+ ## License
  License: [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html)
