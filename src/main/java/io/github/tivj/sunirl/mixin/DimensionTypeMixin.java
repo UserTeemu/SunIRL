@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class DimensionTypeMixin {
 	@Inject(at = @At("HEAD"), method = "method_28528(J)F", cancellable = true)
 	private void init(long l, CallbackInfoReturnable<Float> cir) {
-		cir.setReturnValue(SunIRL.instance.positionCalculator.getSunElevationAngleDegrees() / 360F);
+		if (SunIRL.instance.config.changeSunPositionInCode) cir.setReturnValue(SunIRL.instance.positionCalculator.getSunElevationAngleDegrees() / 360F);
 	}
 }

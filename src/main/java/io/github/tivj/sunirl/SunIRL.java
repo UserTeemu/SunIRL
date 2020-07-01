@@ -35,7 +35,7 @@ public class SunIRL implements ModInitializer, ClientModInitializer {
 				positionCalculator.ticksUntilNextCalculation--;
 			} else {
 				positionCalculator.ticksUntilNextCalculation = this.config.updateDelay;
-				positionCalculator.recalculate(client.world.getTimeOfDay());
+				positionCalculator.recalculate(client.world.getTimeOfDay() % dayLength);
 			}
 		}
 	}

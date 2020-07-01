@@ -61,12 +61,13 @@ public class CalculationHelper {
     }
 
     public void recalculate(long minecraftTime) {
+        minecraftTime += 6000L;
         TimeZone timezone = TimeZone.getTimeZone(SunIRL.instance.config.location.timezone);
         ZonedDateTime time = ZonedDateTime.of(
                 LocalDateTime.of(
                         LocalDate.now(timezone.toZoneId()).plusDays(SunIRL.instance.config.addDays ? minecraftTime / SunIRL.instance.dayLength : 0),
                         SunIRL.instance.config.useMCTime ?
-                                LocalTime.ofSecondOfDay((long) (minecraftTime % SunIRL.instance.dayLength / (double)SunIRL.instance.dayLength * 24D * 60D * 60D)) :
+                                LocalTime.ofSecondOfDay((long) ((minecraftTime % SunIRL.instance.dayLength) / (double)SunIRL.instance.dayLength * 24D * 60D * 60D)) :
                                 LocalTime.now(timezone.toZoneId()).plusHours(timezone.useDaylightTime() ? 1 : 0)
                 ),
                 timezone.toZoneId()
